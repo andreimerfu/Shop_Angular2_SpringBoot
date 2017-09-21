@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.box {
+	border: 1px solid black;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+}
+
+body {
+    font-family: Tahoma, Serif;
+    margin:0;
+}
+
+md-input-container {
+    width: 100%;
+}
+
+md-select {
+    width: 100%;
+}
+
+md-slide-toggle {
+    width:100%;
+}
+
+.container {
+	width:90%;
+	margin:auto;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.primary {
+	color:white;
+}
