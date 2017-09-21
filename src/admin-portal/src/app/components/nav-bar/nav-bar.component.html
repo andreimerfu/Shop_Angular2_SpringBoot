@@ -3,5 +3,5 @@
 	<span class="example-spacer"></span>
 	<span [hidden]="!loggedIn"><a md-button>View Book List</a></span>
 	<span [hidden]="!loggedIn"><a md-button>Add a Book</a></span>
-	<span [hidden]="!loggedIn"><a md-button>Logout</a></span>
+	<span [hidden]="!loggedIn"><a md-button (click) = "logout()">Logout</a></span>
 </md-toolbar>

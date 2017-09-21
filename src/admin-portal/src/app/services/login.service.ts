@@ -20,4 +20,26 @@ export class LoginService {
 
   }
 
+  checkSession(){
+
+    let url = "http://localhost:8181/checkSession";
+
+    let headers = new Headers ({
+      'x-auth-token' : localStorage.getItem('xAuthToken')
+    });
+
+    return this.http.get(url, {headers: headers});
+
+  }
+
+  logout(){
+    let url = "http://localhost:8181/user/logout";
+
+    let headers =  new Headers({
+      'x-auth-token' : localStorage.getItem('xAuthToken')
+    });
+
+    return this.http.post(url, '',{headers: headers});
+  }
+
 }
