@@ -3,7 +3,7 @@
     <h3 style="margin-top: 30px;">New Book Information <span style="font-size:small">* is a required field</span></h3>
 
     <form (ngSubmit)="onSubmit()">
-      <md-grid-list cols="4" rowHeight="60px">
+      <md-grid-list cols="4" rowHeight="80px">
         <md-grid-tile [colspan]="4" [rowspan]="1">
           <md-input-container>
             <input mdInput id="title" type="text" required [(ngModel)]="newBook.title" name="title" placeholder="Title">
@@ -11,7 +11,7 @@
         </md-grid-tile>
       </md-grid-list>
 
-      <md-grid-list cols="4" rowHeight="60px">
+      <md-grid-list cols="4" rowHeight="80px">
         <md-grid-tile [colspan]="2" [rowspan]="1">
           <md-input-container>
             <input mdInput id="author" type="text" required [(ngModel)]="newBook.author" name="author" placeholder="Author">
@@ -24,7 +24,7 @@
         </md-grid-tile>
       </md-grid-list>
 
-      <md-grid-list cols="4" rowHeight="60px">
+      <md-grid-list cols="4" rowHeight="80px">
         <md-grid-tile [colspan]="4" [rowspan]="1">
           <md-input-container>
             <input mdInput id="publicationDate" type="date" required [(ngModel)]="newBook.publicationDate" name="publicationDate" placeholder="PublicationDate">
@@ -32,7 +32,7 @@
         </md-grid-tile>
       </md-grid-list>
 
-      <md-grid-list cols="4" rowHeight="60px">
+      <md-grid-list cols="4" rowHeight="80px">
         <md-grid-tile [colspan]="2" [rowspan]="1">
           <md-select placeholder="Category" id="category" name="category" [(ngModel)]="newBook.category">
             <md-option value="Management">Management</md-option>
@@ -50,7 +50,7 @@
         </md-grid-tile>
       </md-grid-list>
 
-      <md-grid-list cols="4" rowHeight="60px">
+      <md-grid-list cols="4" rowHeight="80px">
         <md-grid-tile [colspan]="2" [rowspan]="1">
           <md-input-container>
             <input mdInput id="pageNumber" type="number" [(ngModel)]="newBook.numberOfPages" name="numberOfPages" step="1" placeholder="Number of Pages">
@@ -63,7 +63,7 @@
         </md-grid-tile>
       </md-grid-list>
 
-      <md-grid-list cols="4" rowHeight="60px">
+      <md-grid-list cols="4" rowHeight="80px">
         <md-grid-tile [colspan]="2" [rowspan]="1">
           <md-input-container>
             <input mdInput id="listPrice" type="number" [(ngModel)]="newBook.listPrice" name="listPrice" step="0.01" placeholder="List Price">
@@ -76,7 +76,7 @@
         </md-grid-tile>
       </md-grid-list>
 
-      <md-grid-list cols="4" rowHeight="60px">
+      <md-grid-list cols="4" rowHeight="80px">
         <md-grid-tile [colspan]="2" [rowspan]="1">
           <md-input-container>
             <input mdInput id="shippingWeight" type="number" [(ngModel)]="newBook.shippingWeight" name="shippingWeight" step="0.01" placeholder="Shipping Weight">
@@ -90,7 +90,7 @@
         </md-grid-tile>
       </md-grid-list>
 
-      <md-grid-list cols="4" rowHeight="60px">
+      <md-grid-list cols="4" rowHeight="80px">
         <md-grid-tile [colspan]="2" [rowspan]="1">
           <md-input-container>
             <input mdInput id="inStockNumber" type="number" [(ngModel)]="newBook.inStockNumber" name="inStockNumber" step="0.01" placeholder="Numbers In Stock">
@@ -109,7 +109,7 @@
       <input id="tile" type="file" id="bookImage" name="bookImage" (change)="uploadImageService.fileChangeEvent($event)">
       <br><br>
 
-      <md-grid-list cols="20" rowHeight="60px">
+      <md-grid-list cols="20" rowHeight="80px">
         <md-grid-tile [colspan]="2" [rowspan]="1">
           <button class="mat-primary" md-raised-button type="submit">Add Book</button>
         </md-grid-tile>

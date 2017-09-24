@@ -1,0 +1,53 @@
+<div class = "container" id = "tot">
+  <div class = "table-responsive" style = "margin-top: 30px;">
+    <table id = "bookListTable" class = "table bordered highlight">
+      <thead>
+        <tr>
+          <th>
+            <input type = "checkbox" (change)="updateSelected($event.target.checked)" />
+          </th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Category</th>
+          <th>List Price</th>
+          <th>Our Price</th>
+          <th>Active?</th>
+          <th>Operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Angular2  let item of arrayName -->
+        <tr *ngFor = "let book of bookList">
+          <td>
+              <input hidden = "hidden" name = "id" />
+              <input type = "checkbox" [checked] = "allChecked" (change) = "updateRemoveBookList($event.target.checked, book)" />
+          </td>
+          <td>
+            <a (click) = "onSelect(book)" style = "cursor:pointer">
+              {{book.title}}
+            </a>
+          </td>
+          <td>{{book.author}}</td>
+          <td>{{book.category}}</td>
+          <td>{{book.listPrice}}</td>
+          <td>{{book.ourPrice}}</td>
+          <td>{{book.active}}</td>
+          <td>
+            <input hidden = "hidden" name = "id" />
+            <button md-button id = "deleteFiecare" (click) = "openDialog(book)" value = "delete">
+              <span class = "fa fa-times">
+                 delete
+              </span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button md-raised-button class = "mat-warn" id = "deleteSelected" (click) = "removeSelectedBooks()">
+    Delete Selected
+  </button>
+  <button md-raised-button class = "mat-primary" routerLink="/">
+    Back
+  </button>
+</div>
