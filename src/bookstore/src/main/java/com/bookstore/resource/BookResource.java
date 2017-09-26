@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Iterator;
@@ -68,7 +69,7 @@ public class BookResource {
                 MultipartFile multipartFile = multipartRequest.getFile(it.next());
                 String fileName = id + ".png";
 
-               // Files.delete(Paths.get("/home/andreimerfu/Documents/bookstore-angular/src/bookstore/src/main/resources/static/image/book/" + fileName));
+                Files.delete(Paths.get("/home/andreimerfu/Documents/bookstore-angular/src/bookstore/src/main/resources/static/image/book/" + fileName));
 
                 byte[] bytes = multipartFile.getBytes();
                 BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File("/home/andreimerfu/Documents/bookstore-angular/src/bookstore/src/main/resources/static/image/book/" + fileName)));
@@ -94,8 +95,13 @@ public class BookResource {
     }
 
     @RequestMapping(value = "/remove", method = RequestMethod.POST)
-    public ResponseEntity remove(@RequestBody String id){
+    public ResponseEntity remove(@RequestBody String id) throws IOException{
         bookService.removeOne(Long.parseLong(id));
+
+        String fileName = id + ".png";
+
+        Files.delete(Paths.get("/home/andreimerfu/Documents/bookstore-angular/src/bookstore/src/main/resources/static/image/book/" + fileName));
+
         return new ResponseEntity("Remove Success!", HttpStatus.OK);
     }
 
