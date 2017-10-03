@@ -33,19 +33,19 @@ export class MyAccountComponent implements OnInit {
   ) { }
 
   onLogin(){
-    this.loginService.sendCredential(this.credential.username, this.credential.password).subscribe(
-      res => {
-        console.log(res);
-        localStorage.setItem("xAuthToken", res.json().token);
-        this.loggedIn = true;
-        location.reload();
-        this.router.navigate(['/home']);
-      },
-      error =>{
-        this.loggedIn = false;
-        this.loginError = true;
-      }
-    );
+    // this.loginService.sendCredential(this.credential.username, this.credential.password).subscribe(
+    //   res => {
+    //     console.log(res);
+    //     localStorage.setItem("xAuthToken", res.json().token);
+    //     this.loggedIn = true;
+    //     location.reload();
+    //     this.router.navigate(['/home']);
+    //   },
+    //   error =>{
+    //     this.loggedIn = false;
+    //     this.loginError = true;
+    //   }
+    // );
   }
 
   ngOnInit() {
