@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MdButtonModule } from '@angular/material/button';
+import { MdTabsModule } from '@angular/material/tabs';
 import 'hammerjs';
 
 import { LoginService } from './services/login.service';
@@ -26,7 +28,9 @@ import { MyAccountComponent } from './components/my-account/my-account.component
     FormsModule,
     HttpModule,
     routing,
-    MdButtonModule
+    BrowserAnimationsModule,
+    MdButtonModule,
+    MdTabsModule
   ],
   providers: [
     LoginService,
