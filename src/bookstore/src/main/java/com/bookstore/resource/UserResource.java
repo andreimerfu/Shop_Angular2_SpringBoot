@@ -1,11 +1,11 @@
 package com.bookstore.resource;
 
-import com.bookstore.config.SecurityUtility;
-import com.bookstore.domain.User;
-import com.bookstore.domain.security.Role;
-import com.bookstore.domain.security.UserRole;
-import com.bookstore.service.UserService;
-import com.bookstore.utility.MailConstructor;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,10 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import com.bookstore.config.SecurityUtility;
+import com.bookstore.domain.User;
+import com.bookstore.domain.security.Role;
+import com.bookstore.domain.security.UserRole;
+import com.bookstore.service.UserService;
+import com.bookstore.utility.MailConstructor;
 
 @RestController
 @RequestMapping("/user")
@@ -34,16 +36,19 @@ public class UserResource {
     @Autowired
     private JavaMailSender mailSender;
 
-    @RequestMapping(value = "/newUser", method= RequestMethod.POST)
-    public ResponseEntity newUserPost(HttpServletRequest request, @RequestBody HashMap<String, String> mapper) throws Exception {
+    @RequestMapping(value="/newUser", method=RequestMethod.POST)
+    public ResponseEntity newUserPost(
+            HttpServletRequest request,
+            @RequestBody HashMap<String, String> mapper
+    ) throws Exception {
         String username = mapper.get("username");
         String userEmail = mapper.get("email");
 
-        if (userService.findByUsername(username) != null) {
+        if(userService.findByUsername(username) != null) {
             return new ResponseEntity("usernameExists", HttpStatus.BAD_REQUEST);
         }
 
-        if (userService.findByEmail(userEmail) != null) {
+        if(userService.findByEmail(userEmail) != null) {
             return new ResponseEntity("emailExists", HttpStatus.BAD_REQUEST);
         }
 
@@ -67,6 +72,31 @@ public class UserResource {
         mailSender.send(email);
 
         return new ResponseEntity("User Added Successfully!", HttpStatus.OK);
+
+    }
+
+    @RequestMapping(value="/forgetPassword", method=RequestMethod.POST)
+    public ResponseEntity forgetPasswordPost(
+            HttpServletRequest request,
+            @RequestBody HashMap<String, String> mapper
+    ) throws Exception {
+
+        User user = userService.findByEmail(mapper.get("email"));
+
+        if(user == null) {
+            return new ResponseEntity("Email not found", HttpStatus.BAD_REQUEST);
+        }
+        String password = SecurityUtility.randomPassword();
+
+        String encryptedPassword = SecurityUtility.passwordEncoder().encode(password);
+        user.setPassword(encryptedPassword);
+        userService.save(user);
+
+        SimpleMailMessage newEmail = mailConstructor.constructNewUserEmail(user, password);
+        mailSender.send(newEmail);
+
+        return new ResponseEntity("Email sent!", HttpStatus.OK);
+
     }
 
 }

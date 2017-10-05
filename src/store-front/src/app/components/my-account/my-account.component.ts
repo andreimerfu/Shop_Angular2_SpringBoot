@@ -24,7 +24,7 @@ export class MyAccountComponent implements OnInit {
 
   private emailNotExists: boolean =false;
   private forgetPasswordEmailSent: boolean;
-  private recoverEmail:string;  
+  private recoverEmail:string;
 
   constructor(
   	private loginService: LoginService,
@@ -40,7 +40,7 @@ export class MyAccountComponent implements OnInit {
   			this.loggedIn = true;
   			location.reload();
   			this.router.navigate(['/home']);
-  		}, 
+  		},
   		error => {
   			this.loggedIn = false;
   			this.loginError = true;
@@ -57,7 +57,7 @@ export class MyAccountComponent implements OnInit {
   		res => {
   			console.log(res);
   			this.emailSent = true;
-  		}, 
+  		},
   		error => {
   			console.log(error.text());
   			let errorMessage = error.text();
@@ -74,12 +74,12 @@ export class MyAccountComponent implements OnInit {
   	this.userService.retrievePassword(this.recoverEmail).subscribe(
   		res => {
   			console.log(res);
-  			this.emailSent = true;
+  			this.forgetPasswordEmailSent = true;
   		},
   		error => {
   			console.log(error.text());
   			let errorMessage = error.text();
-  			if(errorMessage==="emailExists") this.emailExists=true;
+  			if(errorMessage==="Email not found") this.emailNotExists=true;
   		}
   	);
   }
