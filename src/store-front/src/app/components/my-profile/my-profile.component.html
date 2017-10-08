@@ -26,8 +26,8 @@
 				<div class="panel-group">
 					<div class="panel panel-default" style="border:none;">
 						<div class="panel-body" style="background-color: #ededed; margin-top: 20px;">
-							<md-tab-group [selectedIndex]="selectedProfileTab">
-								<md-tab label="Edit">
+							<mat-tab-group [selectedIndex]="selectedProfileTab">
+								<mat-tab label="Edit">
 									<div style="margin-top: 20px;">
 										<div class="alert alert-danger" *ngIf="incorrectPassword">
 										<strong>Incorrect Password!</strong> Please enter the correct password for the current user.
@@ -83,10 +83,10 @@
 											</label>
 											<input type="password" class="form-control" id="txtConfirmPassword" name="txtNewPassword"  />
 										</div>
-										<button md-raised-button type="submit" class="mat-primary" id="udpateuserInfoButton">Save</button>
+										<button mat-raised-button type="submit" class="mat-primary" id="udpateuserInfoButton">Save</button>
 									</form>
-								</md-tab>
-							</md-tab-group>
+								</mat-tab>
+							</mat-tab-group>
 						</div>
 					</div>
 				</div>

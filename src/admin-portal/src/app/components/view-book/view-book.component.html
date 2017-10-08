@@ -4,63 +4,63 @@
     <span> / </span>
     <a (click)="onSelect(book)" style="cursor: pointer">Edit</a>
   </div>
-  <md-grid-list cols="9" rowHeight="100px">
-    <md-grid-tile [colspan]="3" [rowspan]="5">
+  <mat-grid-list cols="9" rowHeight="100px">
+    <mat-grid-tile [colspan]="3" [rowspan]="5">
       <div class="panel panel-default">
         <div class="panel-body">
           <img [src]="'http://localhost:8181/image/book/'+book.id+'.png'" class="responsive-img" />
         </div>
       </div>
-    </md-grid-tile>
-    <md-grid-tile [colspan]="6">
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="6">
       <h3>{{book.title}}</h3>
-    </md-grid-tile>
-    <md-grid-tile [colspan]="3" [rowspan]="3">
-      <md-list>
-        <md-list-item>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="3" [rowspan]="3">
+      <mat-list>
+        <mat-list-item>
           <p><strong>Author: </strong>{{book.author}}</p>
-        </md-list-item>
-        <md-list-item>
+        </mat-list-item>
+        <mat-list-item>
           <p><strong>Publisher: </strong>{{book.publisher}}</p>
-        </md-list-item>
-        <md-list-item>
+        </mat-list-item>
+        <mat-list-item>
           <p><strong>Publication Date: </strong>{{book.publicationDate}}</p>
-        </md-list-item>
-        <md-list-item>
+        </mat-list-item>
+        <mat-list-item>
           <p><strong>Language: </strong>{{book.language}}</p>
-        </md-list-item>
-        <md-list-item>
+        </mat-list-item>
+        <mat-list-item>
           <p><strong>Category: </strong>{{book.category}}</p>
-        </md-list-item>
-        <md-list-item>
+        </mat-list-item>
+        <mat-list-item>
           <p><strong>Pages: </strong>{{book.numberOfPages}}</p>
-        </md-list-item>
-      </md-list>
-    </md-grid-tile>
-    <md-grid-tile [colspan]="3" [rowspan]="3">
-      <md-list>
-        <md-list-item>
+        </mat-list-item>
+      </mat-list>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="3" [rowspan]="3">
+      <mat-list>
+        <mat-list-item>
           <p><strong>Format: </strong>{{book.format}}</p>
-        </md-list-item>
-        <md-list-item>
+        </mat-list-item>
+        <mat-list-item>
           <p><strong>ISBN: </strong>{{book.isbn}}</p>
-        </md-list-item>
-        <md-list-item>
+        </mat-list-item>
+        <mat-list-item>
           <p><strong>Shipping Weight: </strong>{{book.shippingWeight}}</p>
-        </md-list-item>
-        <md-list-item>
+        </mat-list-item>
+        <mat-list-item>
           <p><strong>List Price: </strong>{{book.listPrice}}</p>
-        </md-list-item>
-        <md-list-item>
+        </mat-list-item>
+        <mat-list-item>
           <p><strong>Our Price: </strong>{{book.ourPrice}}</p>
-        </md-list-item>
-        <md-list-item>
+        </mat-list-item>
+        <mat-list-item>
           <p><strong>Number in Stock: </strong>{{book.inStockNumber}}</p>
-        </md-list-item>
-      </md-list>
-    </md-grid-tile>
-    <md-grid-tile [colspan]="6">
+        </mat-list-item>
+      </mat-list>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="6">
       <p><strong>Description: </strong>{{book.description}}</p>
-    </md-grid-tile>
-  </md-grid-list>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>

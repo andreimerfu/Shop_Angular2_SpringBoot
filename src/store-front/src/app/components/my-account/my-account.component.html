@@ -17,8 +17,8 @@
 			<div class="panel-group">
 				<div class="panel panel-default panel-faq" style="border:none;">
 					<div class="panel-body" style="background-color: #ededed; margin-top:20px;">
-						<md-tab-group>
-							<md-tab label="Login">
+						<mat-tab-group>
+							<mat-tab label="Login">
 								<div style="margin-top:20px;">
 									<div *ngIf="loginError" style="color:red;">
 										Incorrect username or password.
@@ -35,11 +35,11 @@
 											<input type="password" class="form-control" id="password" name="password" [(ngModel)]="credential.password" required="required" autofocus="autofocus">
 											<p style="color:#828282;">Enter your password</p>
 										</div>
-										<button md-raised-button type="submit" class="mat-primary">Log In</button>
+										<button mat-raised-button type="submit" class="mat-primary">Log In</button>
 									</form>
 								</div>
-							</md-tab>
-							<md-tab label="New Account">
+							</mat-tab>
+							<mat-tab label="New Account">
 								<div style="margin-top: 20px;">
 									<div class="alert alert-info" *ngIf="emailSent">An email has been sent to the email address you just registered. Please validate your email adderss and update your password info.</div>
 									<form (ngSubmit)="onNewAccount()">
@@ -53,11 +53,11 @@
 											<input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" required="required" >
 											<p style="color:#828282;">A valid e-mail address. All e-mails from the system will be sent to this address.</p>
 										</div>
-										<button md-raised-button type="submit" class="mat-primary">Create new account</button>
+										<button mat-raised-button type="submit" class="mat-primary">Create new account</button>
 									</form>
 								</div>
-							</md-tab>
-							<md-tab label="Forget Password">
+							</mat-tab>
+							<mat-tab label="Forget Password">
 								<div style="margin-top: 20px;">
 									<div class="alert alert-warning" *ngIf="emailNotExists">Email doesn't exists.</div>
 									<div class="alert alert-success" *ngIf="forgetPasswordEmailSent">Email sent.</div>
@@ -67,11 +67,11 @@
 											<input type="email" class="form-control" id="recoverEmail" name="recoverEmail" [(ngModel)]="recoverEmail" required="required" >
 											<p style="color:#828282;">Enter your registered email address.</p>
 										</div>
-										<button md-raised-button type="submit" class="mat-primary">Submit</button>
+										<button mat-raised-button type="submit" class="mat-primary">Submit</button>
 									</form>
 								</div>
-							</md-tab>
-						</md-tab-group>
+							</mat-tab>
+						</mat-tab-group>
 					</div>
 				</div>
 			</div>

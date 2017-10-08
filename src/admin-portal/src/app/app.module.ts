@@ -5,15 +5,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
-import { MdButtonModule } from '@angular/material/button';
-import { MdInputModule } from '@angular/material/input';
-import { MdGridListModule } from '@angular/material/grid-list';
-import { MdSliderModule } from '@angular/material/slider';
-import { MdButtonToggleModule } from '@angular/material/button-toggle';
-import { MdSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MdDialogModule } from '@angular/material/dialog';
-import { MdToolbarModule } from '@angular/material/toolbar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import 'hammerjs';
 
@@ -49,14 +49,14 @@ import { EditBookComponent } from './components/edit-book/edit-book.component';
     FormsModule,
     HttpModule,
     routing,
-    MdButtonModule,
-    MdInputModule,
-    MdGridListModule,
-    MdSliderModule,
-    MdButtonToggleModule,
-    MdSlideToggleModule,
-    MdDialogModule,
-    MdToolbarModule,
+    MatButtonModule,
+    MatInputModule,
+    MatGridListModule,
+    MatSliderModule,
+    MatButtonToggleModule,
+    MatSlideToggleModule,
+    MatDialogModule,
+    MatToolbarModule,
     BrowserAnimationsModule
   ],
   providers: [

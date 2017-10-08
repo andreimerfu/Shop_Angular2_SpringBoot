@@ -34,7 +34,7 @@
           <td>{{book.active}}</td>
           <td>
             <input hidden = "hidden" name = "id" />
-            <button md-button id = "deleteFiecare" (click) = "openDialog(book)" value = "delete">
+            <button mat-button id = "deleteFiecare" (click) = "openDialog(book)" value = "delete">
               <span class = "fa fa-times">
                  delete
               </span>
@@ -44,10 +44,10 @@
       </tbody>
     </table>
   </div>
-  <button md-raised-button class = "mat-warn" id = "deleteSelected" (click) = "removeSelectedBooks()">
+  <button mat-raised-button class = "mat-warn" id = "deleteSelected" (click) = "removeSelectedBooks()">
     Delete Selected
   </button>
-  <button md-raised-button class = "mat-primary" routerLink="/">
+  <button mat-raised-button class = "mat-primary" routerLink="/">
     Back
   </button>
 </div>

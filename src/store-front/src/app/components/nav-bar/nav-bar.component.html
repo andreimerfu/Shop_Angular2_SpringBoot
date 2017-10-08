@@ -18,16 +18,16 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li *ngIf="!loggedIn">
-					<a md-button routerLink="/myAccount">MY ACCOUNT</a>
+					<a mat-button routerLink="/myAccount">MY ACCOUNT</a>
 				</li>
 				<li *ngIf="loggedIn">
-					<a md-button routerLink="/shoppingCart">SHOPPING CART</a>
+					<a mat-button routerLink="/shoppingCart">SHOPPING CART</a>
 				</li>
 				<li *ngIf="loggedIn">
-					<a md-button routerLink="/myProfile">MY PROFILE</a>
+					<a mat-button routerLink="/myProfile">MY PROFILE</a>
 				</li>
 				<li *ngIf="loggedIn">
-					<a md-button (click)="logout()">LOGOUT</a>
+					<a mat-button (click)="logout()">LOGOUT</a>
 				</li>
 			</ul>
 		</div>
